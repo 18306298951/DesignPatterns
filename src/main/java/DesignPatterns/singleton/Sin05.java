@@ -13,10 +13,10 @@ public class Sin05 {
     }
 
     public static Sin05 getINSTANCE() {
-        if (INSTANCE == null){
-            synchronized(Sin05.class){
-                if (INSTANCE == null){
-                    INSTANCE =  new Sin05();
+        if (INSTANCE == null) {
+            synchronized (Sin05.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new Sin05();
                 }
             }
         }
@@ -25,10 +25,10 @@ public class Sin05 {
 
     public static void main(String[] args) {
 
-        for (int i = 0; i <100 ; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(() -> {
-                System.out.println(Thread.currentThread().getName()+"\t"+ Sin05.getINSTANCE().hashCode());
-            }, i+"").start();
+                System.out.println(Thread.currentThread().getName() + "\t" + Sin05.getINSTANCE().hashCode());
+            }, i + "").start();
         }
 
     }
